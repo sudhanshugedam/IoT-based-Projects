@@ -63,31 +63,15 @@ The projects in this repository may use:
 
 New projects will follow the same organized structure:
 
-IoT-based-Projects/
-│
+Project-02-Project-Name/
 ├── README.md
-│
-├── Project-01-IoT-Project/
-│   ├── README.md
-│   ├── Code/
-│   │   └── project.ino
-│   ├── Circuit-Diagram/
-│   │   └── circuit.png
-│   └── Images/
-│       ├── project.jpg
-│       └── setup.jpg
-│
-├── Project-02-Next-Project/
-│   ├── README.md
-│   ├── Code/
-│   ├── Circuit-Diagram/
-│   └── Images/
-│
-└── Project-03-Next-Project/
-    ├── README.md
-    ├── Code/
-    ├── Circuit-Diagram/
-    └── Images/
+├── Code/
+│   └── project_code.ino
+├── Circuit-Diagram/
+│   └── circuit_diagram.png
+└── Images/
+    ├── project_image.jpg
+    └── project_setup.jpg
 
 Each new project can be added to the **Projects** section without changing the existing project structure.
 
