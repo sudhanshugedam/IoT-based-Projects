@@ -1,92 +1,215 @@
-# IoT Projects
+# **Library Seat Availability System using IoT**
 
-A collection of IoT projects developed using sensors, microcontrollers, wireless communication, and automation technologies. Each project is organized separately with its source code, circuit diagram, images, and documentation.
+## 📌 Introduction
+
+**The Library Seat Availability System is an IoT-based project designed to monitor the availability of library seats in real time.**
+
+**The system uses IR sensors to detect whether seats are occupied or available. An ESP8266 NodeMCU processes the sensor data and sends the information to Firebase Realtime Database through Wi-Fi.**
+
+**The seat information is displayed on a public web dashboard so that users can check seat availability remotely.**
 
 ---
 
-## 📁 Repository Structure
+## 🎯 Aim
 
-Each project follows a consistent structure:
+**To develop an IoT-based Library Seat Availability System that detects occupied and available seats using IR sensors and displays the real-time status on a web dashboard.**
+
+---
+
+## 🛠️ Components Required
+
+- **ESP8266 NodeMCU**
+- **IR Obstacle Sensors × 2**
+- **Breadboard**
+- **Jumper Wires**
+- **USB Cable**
+- **5V USB Power Supply**
+- **Computer/Laptop**
+- **Smartphone Hotspot**
+
+---
+
+## 💻 Software and Technologies
+
+- **Arduino IDE**
+- **Embedded C/C++**
+- **ESP8266 Wi-Fi**
+- **Firebase Realtime Database**
+- **Firebase Hosting**
+- **HTML**
+- **CSS**
+- **JavaScript**
+
+---
+
+## ⚙️ Working Principle
+
+**1. Two IR sensors are used to monitor two library seats.**
+
+**2. Each IR sensor is connected to the ESP8266 NodeMCU.**
+
+**3. When a person occupies a seat, the corresponding IR sensor detects the object.**
+
+**4. The ESP8266 determines whether the seat is available or occupied.**
+
+**5. The ESP8266 connects to the Internet through Wi-Fi.**
+
+**6. Seat status is sent to Firebase Realtime Database.**
+
+**7. The public web dashboard reads the latest Firebase data.**
+
+**8. The dashboard displays the number of available seats and the status of each seat.**
+
+---
+
+## 🔌 Pin Connections
+
+| **Component** | **ESP8266 Pin** |
+|---|---|
+| **IR Sensor 1 OUT** | **D5** |
+| **IR Sensor 2 OUT** | **D6** |
+| **IR Sensor 1 VCC** | **3.3V** |
+| **IR Sensor 2 VCC** | **3.3V** |
+| **IR Sensor 1 GND** | **GND** |
+| **IR Sensor 2 GND** | **GND** |
+
+---
+
+## 🌐 System Architecture
 
 ```text
-Project-Name/
-├── README.md
-├── Code/
-├── Circuit-Diagram/
-└── Images/
+        IR Sensor 1
+             │
+             ▼
+        ┌──────────┐
+        │          │
+        │ ESP8266  │
+        │ NodeMCU  │
+        │          │
+        └──────────┘
+             ▲
+             │
+        IR Sensor 2
+             │
+             ▼
+           Wi-Fi
+             │
+             ▼
+      Firebase Database
+             │
+             ▼
+       Public Web
+        Dashboard
 ```
 
-* **README.md** – Project information, components, working, and instructions.
-* **Code/** – Source code and program files.
-* **Circuit-Diagram/** – Circuit diagrams and connection details.
-* **Images/** – Project setup and demonstration images.
+---
+
+## 🔥 Firebase
+
+**Firebase Realtime Database is used to store the current seat status.**
+
+**Example:**
+
+```text
+seats
+ ├── seat1: true
+ └── seat2: false
+```
+
+**Where:**
+
+- **`true` = Available**
+- **`false` = Occupied**
 
 ---
 
-## 🚀 Projects
+## 🌍 Live Website
 
-### 01. Library Seat Availability System
+**The project includes a public web dashboard for viewing seat availability.**
 
-**Description:**
-A brief description of the project and its purpose.
+**Live Website:**
 
-📁 [View Project](./Project-01-Library_Seat_Availability_System/)
-
----
-
-## 🛠️ Technologies Used
-
-The projects in this repository may use:
-
-* ESP8266 / ESP32
-* Arduino
-* Sensors
-* Actuators
-* Wi-Fi and Wireless Communication
-* IoT Technologies
-* Arduino IDE
-* Embedded Systems
+[**https://library-seat-availability.web.app**](https://library-seat-availability.web.app)
 
 ---
 
-## 📌 How to Explore a Project
+## 📊 Prototype
 
-1. Select a project from the **Projects** section.
-2. Open the project's `README.md` for detailed information.
-3. Check the **Code** folder for the source code.
-4. Refer to the **Circuit-Diagram** folder for circuit connections.
-5. Check the **Images** folder for project photos and demonstrations.
+**The current prototype monitors two library seats using two IR sensors.**
+
+### **Seat 1**
+
+- **Available**
+- **Occupied**
+
+### **Seat 2**
+
+- **Available**
+- **Occupied**
+
+**The system also calculates the total number of available seats.**
 
 ---
 
-## ➕ Adding More Projects
+## ✨ Features
 
-New projects will follow the same organized structure:
+- **Real-time seat monitoring**
+- **IR-based seat detection**
+- **ESP8266 Wi-Fi connectivity**
+- **Firebase cloud database**
+- **Public web dashboard**
+- **Automatic seat availability calculation**
+- **Remote monitoring**
+- **Low-cost IoT implementation**
 
-Project-02-Project-Name/
+---
+
+## 📁 Project Structure
+
+```text
+Project-01-Library-Seat-Availability/
+│
 ├── README.md
+│
 ├── Code/
-│   └── project_code.ino
+│   └── Library_Seat_Availability.ino
+│
 ├── Circuit-Diagram/
-│   └── circuit_diagram.png
+│   └── circuit-diagram.png
+│
 └── Images/
-    ├── project_image.jpg
-    └── project_setup.jpg
-
-Each new project can be added to the **Projects** section without changing the existing project structure.
-
----
-
-## 🎯 Purpose
-
-This repository contains IoT projects created for learning, experimentation, practical implementation, and exploring real-world applications of IoT and embedded systems.
+    ├── hardware-setup.jpg
+    ├── ir-sensor-test.jpg
+    ├── firebase-database.jpg
+    └── website-dashboard.jpg
+```
 
 ---
 
-## 👨‍💻 Author
+## 🔮 Future Scope
 
-Sudhanshu Gedam
+- **Increase the number of monitored seats.**
+- **Add user authentication.**
+- **Improve database security.**
+- **Add an administrator dashboard.**
+- **Add occupancy statistics and reports.**
+- **Add notifications when seats become available.**
+- **Develop a mobile application for the system.**
 
 ---
 
-⭐ Feel free to explore the projects and use them for learning and experimentation.
+## 👨‍💻 Project
+
+**Project:** **Library Seat Availability System using IoT**
+
+**Project Number:** **01**
+
+**Platform:** **ESP8266 NodeMCU**
+
+**Sensors:** **2 IR Obstacle Sensors**
+
+**Database:** **Firebase Realtime Database**
+
+**Web Hosting:** **Firebase Hosting**
+
+**Hardware Prototype:** **2 Seats**
